@@ -1,0 +1,98 @@
+:root {
+
+    /* COLORS */
+
+    --primary: #243879;
+    --primary-dark: #1d2f66;
+    --primary-light: #4f67b8;
+
+    --secondary: #eef2ff;
+
+    --background: #f8fafc;
+
+    --text: #1f2937;
+    --text-light: #6b7280;
+
+    /* SHADOWS */
+
+    --shadow-soft:
+        0 4px 20px rgba(0,0,0,0.08);
+
+    --shadow-medium:
+        0 8px 30px rgba(0,0,0,0.12);
+
+    /* RADIUS */
+
+    --radius-lg: 24px;
+}
+
+/* BODY */
+
+body {
+
+    background: var(--background);
+    color: var(--text);
+
+}
+
+/* carrucel */
+
+.card-hover:hover {
+
+    transform: translateY(-4px);
+
+}
+
+.carousel-slide {
+
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+
+    transition:
+        opacity 1s ease-in-out,
+        transform 1.2s ease;
+
+    transform: scale(1.05);
+
+}
+
+.carousel-slide.active {
+
+    opacity: 1;
+    z-index: 1;
+
+    transform: scale(1);
+
+}
+
+.carousel-overlay {
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.65),
+            rgba(0,0,0,0.2)
+        );
+
+}
+
+/* navegacion activa (paginas separadas) */
+
+.nav-active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 4px;
+}
+
+.nav-inactive {
+    color: rgba(255,255,255,0.7);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: all .3s;
+}
+
+.nav-inactive:hover {
+    color: #fff;
+    border-bottom-color: rgba(255,255,255,0.4);
+}
