@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal UACJ - Página no encontrada</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-50">
+
+  <div id="header"></div>
+
+  <main class="p-8 max-w-2xl mx-auto w-full text-center">
+
+    <div class="bg-white rounded-2xl shadow-sm p-12 mt-12">
+
+      <p class="text-7xl font-bold text-blue-900 mb-4">404</p>
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">No encontramos esta página</h1>
+      <p class="text-gray-500 mb-8">Puede que el link esté mal escrito, o que esta pantalla todavía no exista.</p>
+
+      <a
+        id="link-volver"
+        href="./index.html"
+        class="inline-block bg-blue-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition"
+      >
+        Volver al inicio
+      </a>
+
+    </div>
+
+  </main>
+
+  <script type="module" src="./js/header.js"></script>
+  <script type="module">
+    // Si ya hay sesión iniciada, "Volver al inicio" te manda a tu semestre,
+    // no al index de la Etapa 1.
+    import { obtenerSesionActual } from './js/api.js';
+
+    obtenerSesionActual().then(usuario => {
+
+      if (usuario) {
+
+        document.getElementById('link-volver').href = './semestre.html';
+
+      }
+
+    });
+  </script>
+</body>
+</html>
