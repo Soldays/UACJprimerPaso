@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal UACJ - Ubicación de salones</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-50">
+
+  <div id="header"></div>
+
+  <main class="p-8 max-w-3xl mx-auto w-full">
+
+    <div class="text-sm text-gray-400 mb-4">
+      <a href="./semestre.html" class="hover:text-blue-700">Inicio</a> &gt; Ubicación de salones
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm p-8">
+
+      <h2 class="text-3xl font-bold text-blue-900 mb-1">Ubicación de salones</h2>
+      <p class="text-gray-500 mb-6">Encuentra dónde están tus clases.</p>
+
+      <form id="form-buscar-salon" class="relative mb-8">
+        <input
+          type="text"
+          id="input-buscar-salon"
+          placeholder="Buscar salón..."
+          class="w-full border border-gray-200 rounded-lg py-3 pl-4 pr-10 focus:outline-none focus:border-blue-400"
+        >
+        <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+          🔍
+        </button>
+      </form>
+
+      <div id="resultados-salones" class="space-y-4 mb-8">
+        <p class="text-gray-400 text-sm">Escribe el nombre de un edificio para buscar.</p>
+      </div>
+
+      <button
+        id="btn-mostrar-form-salon"
+        type="button"
+        class="text-sm text-blue-900 font-medium hover:underline"
+      >
+        + Agregar salón nuevo
+      </button>
+
+      <form id="form-nuevo-salon" class="hidden mt-4 bg-gray-50 rounded-xl p-5 space-y-3">
+
+        <div>
+          <label class="text-xs text-gray-400 block mb-1">Edificio</label>
+          <input
+            type="text"
+            id="input-nuevo-edificio"
+            placeholder="Ej. Edificio V"
+            class="w-full border border-gray-200 rounded-lg py-2 px-3"
+            required
+          >
+        </div>
+
+        <div>
+          <label class="text-xs text-gray-400 block mb-1">Número de aula</label>
+          <input
+            type="text"
+            id="input-nueva-planta"
+            placeholder="Ej. 101"
+            class="w-full border border-gray-200 rounded-lg py-2 px-3"
+          >
+        </div>
+
+        <p class="text-xs text-gray-400">La foto se sube después, cuando el administracion apruebe la Aula .</p>
+
+        <button
+          type="submit"
+          class="bg-blue-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-800 transition text-sm"
+        >
+          Guardar salón
+        </button>
+
+        <p id="mensaje-nuevo-salon" class="text-sm hidden"></p>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script type="module" src="./js/header-semestre.js"></script>
+  <script type="module" src="./js/ubicacion.js"></script>
+</body>
+</html>

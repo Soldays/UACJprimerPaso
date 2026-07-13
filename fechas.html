@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal UACJ - Fechas clave</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-gray-50">
+
+  <div id="header"></div>
+
+  <main class="p-8 max-w-5xl mx-auto w-full">
+
+    <div class="text-sm text-gray-400 mb-4">Inicio > Fechas clave</div>
+
+    <h2 class="text-3xl font-bold text-blue-900 mb-6">Fechas clave</h2>
+
+    <div class="flex space-x-2 mb-8 overflow-x-auto pb-2">
+      <button data-filtro="todos" class="filtro-btn bg-blue-100 text-blue-900 font-bold px-4 py-1 rounded-full border border-blue-900">
+        Todos
+      </button>
+      <button data-filtro="registro" class="filtro-btn bg-white text-gray-500 px-4 py-1 rounded-full border border-gray-300 hover:bg-gray-50">
+        Registro
+      </button>
+      <button data-filtro="examen" class="filtro-btn bg-white text-gray-500 px-4 py-1 rounded-full border border-gray-300 hover:bg-gray-50">
+        Examen
+      </button>
+      <button data-filtro="resultados" class="filtro-btn bg-white text-gray-500 px-4 py-1 rounded-full border border-gray-300 hover:bg-gray-50">
+        Resultados
+      </button>
+    </div>
+
+    <div id="lista-fechas" class="bg-white rounded-xl shadow-sm divide-y divide-gray-100">
+      <!-- ESPACIO DINÁMICO: fechas.js inserta cada fecha aquí -->
+      <div class="p-6 text-gray-400 text-sm">Cargando fechas...</div>
+    </div>
+
+  </main>
+
+  <script type="module" src="./js/header.js"></script>
+  <script type="module" src="./js/fechas.js"></script>
+</body>
+</html>
